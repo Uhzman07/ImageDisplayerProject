@@ -114,7 +114,8 @@ fun GameScreen(viewModel: Retrofit = viewModel()){
         ){ value ->
             // A lazy column is the one that allows vertical scrolling
             LazyColumn(modifier = Modifier.padding(value)){
-                items(game.value){ game ->
+                // Note that items(game.value) stores the game values in one together
+                items(game.value){ game -> // This is for each game in game.value
                     Game(games = game)
 
                 }
